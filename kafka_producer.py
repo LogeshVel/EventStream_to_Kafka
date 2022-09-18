@@ -9,7 +9,7 @@ KAFKA_TOPIC = "wikimedia.recentchange"
 KAFKA_SERVER = 'localhost:9092'
 
 async def produce_msg():
-    print("Started Producing, by gettign the EventStreams")
+    print("Started Producing, by getting the EventStreams")
     try:
         producer = AIOKafkaProducer(bootstrap_servers=KAFKA_SERVER, value_serializer=lambda v: json.dumps(v).encode('utf-8'))
         await producer.start()
